@@ -6,14 +6,18 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class AppComponent {
+
+  /*  En lugar de crear los botones directamente en el HTML uno por uno (lo cual sería código estático
+      y difícil de mantener), prefiero crear una variable global llamada 'appPages'. 
+      Esta variable es un arreglo de objetos. Cada objeto representa un botón del menú y contiene 
+      las propiedades exactas que necesito: el título que leerá el usuario, la ruta a la que debe 
+      navegar y el icono de Ionicons que hará la interfaz más amigable.
+  */
+
   public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
+    { title: 'Inicio', url: '/folder/Inicio', icon: 'home' },
+    { title: 'Información personal', url: '/folder/Información personal', icon: 'person' },
+    { title: 'Contacto', url: '/folder/Contacto', icon: 'call' }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor() { }
 }
