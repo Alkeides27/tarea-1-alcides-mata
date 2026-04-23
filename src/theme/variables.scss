@@ -1,2 +1,63 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+// Custom Impeccable Theme: Leader Fullstack
+// Dark Mode Only, Sora + Chivo Mono fonts, Emerald/Deep Blue palette.
+
+:root {
+  /* Typography Global Override */
+  --ion-font-family: 'Sora', sans-serif;
+  --font-monospace: 'Chivo Mono', monospace;
+
+  /* Deep Technical Dark Theme Override */
+  --ion-color-primary: #059669;
+  --ion-color-primary-rgb: 5,150,105;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #04845c;
+  --ion-color-primary-tint: #1ea178;
+
+  --ion-color-secondary: #1e3a8a;
+  --ion-color-secondary-rgb: 30,58,138;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #1a3379;
+  --ion-color-secondary-tint: #354e96;
+
+  /* Base Backgrounds (Deep warm dark blue/slate) */
+  --ion-background-color: #090e17;
+  --ion-background-color-rgb: 9,14,23;
+  
+  --ion-text-color: #e2e8f0;
+  --ion-text-color-rgb: 226,232,240;
+
+  /* Step colors for contrasts, text muting and borders */
+  --ion-color-step-50: #141923;
+  --ion-color-step-100: #1e242e;
+  --ion-color-step-150: #292f3a;
+  --ion-color-step-200: #343a45;
+  --ion-color-step-250: #3e4451;
+  --ion-color-step-300: #494f5c;
+  --ion-color-step-350: #545a68;
+  --ion-color-step-400: #5e6573;
+  --ion-color-step-450: #69707f;
+  --ion-color-step-500: #747f8b;
+  --ion-color-step-550: #7f8696;
+  --ion-color-step-600: #8991a2;
+  --ion-color-step-650: #949cad;
+  --ion-color-step-700: #9fa7b9;
+  --ion-color-step-750: #aab2c4;
+  --ion-color-step-800: #b4bdd0;
+  --ion-color-step-850: #bfc8db;
+  --ion-color-step-900: #cbd3e7;
+  --ion-color-step-950: #d5dff2;
+
+  /* Surface / Card Backgrounds slightly lighter and warmer */
+  --ion-item-background: #111827;
+  --ion-card-background: #111827;
+}
+
+html[class*="ion-palette-dark"] {
+  /* Ensuring our variables take precedence over Ionic's dark system imports */
+  --ion-background-color: #090e17;
+  --ion-text-color: #e2e8f0;
+  --ion-item-background: #111827;
+  --ion-card-background: #111827;
+}

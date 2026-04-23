@@ -65,6 +65,7 @@ yarn-error.log
 testem.log
 /typings
 .agents/
+.impeccable.md
 
 # System files
 .DS_Store

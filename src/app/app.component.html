@@ -2,13 +2,24 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Mi App Ionic</ion-list-header>
-          <ion-note>Navegación principal</ion-note>
+        <div class="user-profile-header">
+          <ion-avatar class="user-avatar">
+            <div class="initials-avatar">AM</div>
+          </ion-avatar>
+          <div class="user-info">
+            <h2 class="user-name">Alcides Mata</h2>
+            <p class="user-handle">&#64;Alkeides</p>
+          </div>
+        </div>
+
+        <ion-list id="inbox-list" lines="none">
+          <div class="menu-label-section">
+            <ion-note class="tech-label">PORTAFOLIO DE DESARROLLO</ion-note>
+          </div>
 
           @for (p of appPages; track p; let i = $index) {
             <ion-menu-toggle auto-hide="false">
-              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected" class="custom-menu-item">
                 <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
