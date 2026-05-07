@@ -66,6 +66,9 @@ testem.log
 /typings
 .agents/
 .impeccable.md
+TASKS/
+DESIGN.md
+PRODUCT.md
 
 # System files
 .DS_Store
