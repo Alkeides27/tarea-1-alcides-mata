@@ -1,0 +1,85 @@
+// Estableciendo un fondo cálido pero neutral
+ion-content {
+  --background: #fdfcf9;
+}
+
+// Estilo del header y toolbar para que se integre con el fondo
+ion-toolbar {
+  --background: transparent;
+  --border-color: transparent;
+}
+
+ion-title {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #333333;
+}
+
+// Contenedor centrado y espaciado
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh; // Usa casi toda la pantalla para centrar verticalmente
+  padding: 0 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+// Sección de introducción
+.intro-section {
+  text-align: left;
+  margin-bottom: 48px;
+
+  .main-title {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.03em;
+  }
+
+  .sub-title {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-weight: 400;
+    color: #0056b3; // Acento de color sutil, azul profesional
+    margin: 0 0 24px 0;
+  }
+
+  .description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0;
+    max-width: 90%;
+  }
+}
+
+// Botones y acciones
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .custom-btn {
+    --border-radius: 8px;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    --padding-top: 18px;
+    --padding-bottom: 18px;
+  }
+
+  .main-action {
+    --background: #0056b3;
+    --background-hover: #004494;
+    --color: #ffffff;
+    --box-shadow: none; // Sin sombras genéricas
+  }
+
+  .secondary-action {
+    --color: #333333;
+    --background-hover: #f0ede6;
+  }
+}

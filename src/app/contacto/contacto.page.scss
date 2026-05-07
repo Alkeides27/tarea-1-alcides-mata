@@ -1,0 +1,126 @@
+.background-neutral {
+  --background: #fdfcf9;
+}
+
+ion-toolbar {
+  --background: transparent;
+  --border-color: transparent;
+}
+
+ion-title {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #333333;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px 0 40px;
+}
+
+.intro-section {
+  margin-bottom: 32px;
+
+  .page-heading {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .intro-text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0;
+  }
+}
+
+.contact-list {
+  background: transparent;
+  margin-bottom: 40px;
+
+  .contact-item {
+    --inner-padding-end: 0;
+    --background: transparent;
+    --padding-start: 0;
+    --min-height: 72px;
+    margin-bottom: 8px;
+
+    .icon-wrapper {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(0, 86, 179, 0.05); // Tinte sutil
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+
+      ion-icon {
+        font-size: 24px;
+        color: #0056b3;
+      }
+    }
+
+    h3 {
+      font-size: 0.875rem;
+      color: #777777;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+  }
+}
+
+.form-section {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #eaeaea;
+
+  .form-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333333;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .input-item {
+    --background: #f9f9f9;
+    --border-color: transparent;
+    --border-radius: 8px;
+    --highlight-color-focused: #0056b3;
+    --padding-start: 16px;
+    
+    ion-input, ion-textarea {
+      --padding-top: 12px;
+      --padding-bottom: 12px;
+    }
+  }
+
+  .submit-btn {
+    margin-top: 24px;
+    margin-bottom: 0;
+    --background: #0056b3;
+    --background-hover: #004494;
+    --border-radius: 8px;
+    --box-shadow: none;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}

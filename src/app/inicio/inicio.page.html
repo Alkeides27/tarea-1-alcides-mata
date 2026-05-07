@@ -1,13 +1,58 @@
-<ion-header [translucent]="true">
+<!--
+  Header de la página: contiene la barra superior de Ionic con el
+  botón que despliega el menú lateral y el título de la sección.
+-->
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>inicio</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<!--
+  Contenido principal: Aquí utilizo clases de flexbox y alineación
+  para mantener el contenido centrado, limpio y enfocado. El estilo
+  busca un minimalismo moderno según los requerimientos del diseño.
+-->
+<ion-content class="ion-padding">
+  <div class="welcome-container">
+    
+    <!--
+      Sección de bienvenida: presenta mi nombre y profesión.
+      La tipografía es grande y legible, para causar una primera
+      impresión clara y profesional sin exageraciones.
+    -->
+    <div class="intro-section">
+      <h1 class="main-title">[NOMBRE_COMPLETO]</h1>
+      <h2 class="sub-title">[ROL_O_PROFESION]</h2>
+      <p class="description">
+        [FRASE_PERSONAL]
+      </p>
+    </div>
+
+    <!--
+      Botones de navegación principal: proporcionan una ruta clara
+      hacia las otras secciones de la app. Utilizo un botón primario
+      y uno secundario para establecer jerarquía visual.
+    -->
+    <div class="action-buttons">
+      <ion-button 
+        expand="block" 
+        class="custom-btn main-action"
+        (click)="navegar('/informacion-personal')">
+        Ver información personal
+      </ion-button>
+      
+      <ion-button 
+        expand="block" 
+        fill="clear" 
+        class="custom-btn secondary-action"
+        (click)="navegar('/contacto')">
+        Contactarme
+      </ion-button>
+    </div>
+
+  </div>
 </ion-content>
