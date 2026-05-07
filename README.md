@@ -2,9 +2,9 @@
 
 ## Autor
 
-[NOMBRE_COMPLETO]  
-[CARRERA] — [UNIVERSIDAD]  
-[AÑO_ACTUAL]
+Alcides Mata
+Programación III - UNETI
+TAREA 1
 
 ## Descripción
 
