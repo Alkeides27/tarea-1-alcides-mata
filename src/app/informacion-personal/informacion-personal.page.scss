@@ -1,6 +1,6 @@
 // Variables generales y ajustes de fondo
 .background-neutral {
-  --background: #fcfcfb;
+  --background: var(--color-bg);
 }
 
 ion-toolbar {
@@ -9,9 +9,10 @@ ion-toolbar {
 }
 
 ion-title {
+  font-family: var(--font-display);
   font-weight: 500;
   letter-spacing: -0.01em;
-  color: #333333;
+  color: var(--color-text);
 }
 
 // Contenedor principal con tope para anchos de pantalla grandes
@@ -33,23 +34,25 @@ ion-title {
   .main-avatar {
     width: 120px;
     height: 120px;
-    margin-bottom: 16px;
-    border: 3px solid #ffffff;
+    margin-bottom: var(--space-16);
+    border: 3px solid var(--color-surface);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); // Sombra muy sutil, no glassmorphism
   }
 
   .profile-name {
+    font-family: var(--font-display);
     font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--color-text);
     margin: 0 0 4px 0;
     letter-spacing: -0.02em;
   }
 
   .profile-role {
+    font-family: var(--font-body);
     font-size: 1.125rem;
     font-weight: 400;
-    color: #0056b3; // Mismo azul profesional
+    color: var(--color-primary); // Acento Jade
     margin: 0;
   }
 }
@@ -57,28 +60,30 @@ ion-title {
 // Tarjetas minimalistas (NO anidadas y SIN estilos por defecto saturados)
 .clean-card {
   box-shadow: none;
-  background: #ffffff;
+  background: var(--color-surface);
   border-radius: 12px;
-  border: 1px solid #e0e0e0;
-  margin: 0 0 24px 0;
+  border: 1px solid var(--color-muted);
+  margin: 0 0 var(--space-24) 0;
   
   ion-card-header {
-    padding-bottom: 8px;
+    padding-bottom: var(--space-8);
   }
 
   .section-title {
+    font-family: var(--font-display);
     font-size: 1.125rem;
     font-weight: 600;
-    color: #333333;
+    color: var(--color-text);
     text-transform: none; // Evitar uppercase por legibilidad
     letter-spacing: -0.01em;
   }
 }
 
 .bio-text {
+  font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
-  color: #555555;
+  color: var(--color-muted);
   padding-top: 0;
 }
 
@@ -89,19 +94,21 @@ ion-title {
   .academic-item {
     --inner-padding-end: 0;
     --background: transparent;
-    --padding-start: 16px;
+    --padding-start: var(--space-16);
     --min-height: 60px;
 
     .data-title {
+      font-family: var(--font-body);
       font-size: 0.875rem;
-      color: #777777;
+      color: var(--color-muted);
       margin-bottom: 4px;
       font-weight: 500;
     }
 
     .data-value {
+      font-family: var(--font-body);
       font-size: 1rem;
-      color: #1a1a1a;
+      color: var(--color-text);
       font-weight: 400;
     }
   }
@@ -111,14 +118,15 @@ ion-title {
 .chips-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-8);
   padding-top: 4px;
 
   .custom-chip {
     margin: 0;
+    font-family: var(--font-body);
     font-weight: 500;
-    background: rgba(0, 86, 179, 0.08); // Tinte sutil hacia el color base
-    color: #004494;
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
     border-radius: 6px;
   }
 }

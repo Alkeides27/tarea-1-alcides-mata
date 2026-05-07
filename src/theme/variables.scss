@@ -1,63 +1,69 @@
-// Custom Impeccable Theme: Leader Fullstack
-// Dark Mode Only, Sora + Chivo Mono fonts, Emerald/Deep Blue palette.
+// Custom Impeccable Theme: Leader Fullstack - Jade Palette
+// OKLCH variables for unified aesthetics
 
 :root {
-  /* Typography Global Override */
-  --ion-font-family: 'Sora', sans-serif;
-  --font-monospace: 'Chivo Mono', monospace;
+  /* Primary accent – Jade */
+  --color-primary: oklch(0.55 0.12 150);   /* ≈ #4BAF9B */
+  --color-primary-light: oklch(0.9 0.06 150); /* light tint */
+  --color-primary-dark: oklch(0.35 0.12 150); /* dark shade */
 
-  /* Deep Technical Dark Theme Override */
-  --ion-color-primary: #059669;
-  --ion-color-primary-rgb: 5,150,105;
-  --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255,255,255;
-  --ion-color-primary-shade: #04845c;
-  --ion-color-primary-tint: #1ea178;
+  /* Neutrals */
+  --color-bg: oklch(0.98 0.02 150);       /* Very light background */
+  --color-surface: oklch(1 0 150);       /* Pure white with okLCH */
+  --color-text: oklch(0.2 0.02 150);      /* Dark gray for primary text */
+  --color-muted: oklch(0.5 0.02 150);    /* Medium gray for secondary text */
 
-  --ion-color-secondary: #1e3a8a;
-  --ion-color-secondary-rgb: 30,58,138;
-  --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255,255,255;
-  --ion-color-secondary-shade: #1a3379;
-  --ion-color-secondary-tint: #354e96;
+  /* Spacing – 4pt scale */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
 
-  /* Base Backgrounds (Deep warm dark blue/slate) */
-  --ion-background-color: #090e17;
-  --ion-background-color-rgb: 9,14,23;
+  /* Typography */
+  --font-display: "Merriweather", serif;
+  --font-body: "Poppins", sans-serif;
   
-  --ion-text-color: #e2e8f0;
-  --ion-text-color-rgb: 226,232,240;
-
-  /* Step colors for contrasts, text muting and borders */
-  --ion-color-step-50: #141923;
-  --ion-color-step-100: #1e242e;
-  --ion-color-step-150: #292f3a;
-  --ion-color-step-200: #343a45;
-  --ion-color-step-250: #3e4451;
-  --ion-color-step-300: #494f5c;
-  --ion-color-step-350: #545a68;
-  --ion-color-step-400: #5e6573;
-  --ion-color-step-450: #69707f;
-  --ion-color-step-500: #747f8b;
-  --ion-color-step-550: #7f8696;
-  --ion-color-step-600: #8991a2;
-  --ion-color-step-650: #949cad;
-  --ion-color-step-700: #9fa7b9;
-  --ion-color-step-750: #aab2c4;
-  --ion-color-step-800: #b4bdd0;
-  --ion-color-step-850: #bfc8db;
-  --ion-color-step-900: #cbd3e7;
-  --ion-color-step-950: #d5dff2;
-
-  /* Surface / Card Backgrounds slightly lighter and warmer */
-  --ion-item-background: #111827;
-  --ion-card-background: #111827;
+  /* Ionic Base Overrides to match our palette */
+  --ion-font-family: var(--font-body);
+  --ion-background-color: var(--color-bg);
+  --ion-text-color: var(--color-text);
+  --ion-color-primary: #4BAF9B;
+  --ion-item-background: var(--color-surface);
+  --ion-card-background: var(--color-surface);
 }
 
+/* Fallback/Overrides for dark mode logic from Ionic if present */
 html[class*="ion-palette-dark"] {
-  /* Ensuring our variables take precedence over Ionic's dark system imports */
-  --ion-background-color: #090e17;
-  --ion-text-color: #e2e8f0;
-  --ion-item-background: #111827;
-  --ion-card-background: #111827;
+  --ion-background-color: var(--color-bg);
+  --ion-text-color: var(--color-text);
+  --ion-item-background: var(--color-surface);
+  --ion-card-background: var(--color-surface);
+}
+
+/* Utility classes */
+.bg-primary { background: var(--color-primary); }
+.text-primary { color: var(--color-primary); }
+.text-muted { color: var(--color-muted); }
+
+.button-primary {
+  --background: var(--color-primary);
+  --background-hover: var(--color-primary-dark);
+  --color: #fff;
+  --border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.button-outline {
+  --background: transparent;
+  --border: 1px solid var(--color-primary);
+  --color: var(--color-primary);
+  --background-hover: var(--color-primary-light);
+  --border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
 }

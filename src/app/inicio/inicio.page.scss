@@ -1,6 +1,5 @@
-// Estableciendo un fondo cálido pero neutral
 ion-content {
-  --background: #fdfcf9;
+  --background: var(--color-bg);
 }
 
 // Estilo del header y toolbar para que se integre con el fondo
@@ -10,9 +9,10 @@ ion-toolbar {
 }
 
 ion-title {
+  font-family: var(--font-display);
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: #333333;
+  color: var(--color-text);
 }
 
 // Contenedor centrado y espaciado
@@ -32,25 +32,28 @@ ion-title {
   margin-bottom: 48px;
 
   .main-title {
+    font-family: var(--font-display);
     font-size: clamp(2.5rem, 8vw, 3.5rem);
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--color-text);
     line-height: 1.1;
-    margin: 0 0 12px 0;
+    margin: 0 0 var(--space-12) 0;
     letter-spacing: -0.03em;
   }
 
   .sub-title {
+    font-family: var(--font-body);
     font-size: clamp(1.2rem, 4vw, 1.5rem);
     font-weight: 400;
-    color: #0056b3; // Acento de color sutil, azul profesional
-    margin: 0 0 24px 0;
+    color: var(--color-primary); // Acento de color sutil, jade
+    margin: 0 0 var(--space-24) 0;
   }
 
   .description {
+    font-family: var(--font-body);
     font-size: 1.125rem;
     line-height: 1.6;
-    color: #555555;
+    color: var(--color-muted);
     margin: 0;
     max-width: 90%;
   }
@@ -65,21 +68,22 @@ ion-title {
   .custom-btn {
     --border-radius: 8px;
     margin: 0;
+    font-family: var(--font-body);
     font-weight: 500;
     letter-spacing: -0.01em;
-    --padding-top: 18px;
-    --padding-bottom: 18px;
+    --padding-top: var(--space-16);
+    --padding-bottom: var(--space-16);
   }
 
   .main-action {
-    --background: #0056b3;
-    --background-hover: #004494;
-    --color: #ffffff;
+    --background: var(--color-primary);
+    --background-hover: var(--color-primary-dark);
+    --color: var(--color-surface);
     --box-shadow: none; // Sin sombras genéricas
   }
 
   .secondary-action {
-    --color: #333333;
-    --background-hover: #f0ede6;
+    --color: var(--color-text);
+    --background-hover: var(--color-primary-light);
   }
 }
