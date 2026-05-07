@@ -1,58 +1,46 @@
 <!--
-  Header de la página: contiene la barra superior de Ionic con el
-  botón que despliega el menú lateral y el título de la sección.
+  Header de la página: minimalista y sin bordes.
 -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button color="primary"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<!--
-  Contenido principal: Aquí utilizo clases de flexbox y alineación
-  para mantener el contenido centrado, limpio y enfocado. El estilo
-  busca un minimalismo moderno según los requerimientos del diseño.
--->
-<ion-content class="ion-padding">
-  <div class="welcome-container">
-    
-    <!--
-      Sección de bienvenida: presenta mi nombre y profesión.
-      La tipografía es grande y legible, para causar una primera
-      impresión clara y profesional sin exageraciones.
-    -->
-    <div class="intro-section">
-      <h1 class="main-title">Alcides Mata</h1>
-      <h2 class="sub-title">Desarrollador Fullstack - TSU. en Informática</h2>
-      <p class="description">
-        Quod tango, muto
-      </p>
-    </div>
+<ion-content fullscreen="true">
+  <div class="hero-wrapper">
+    <!-- Decoración asimétrica de fondo -->
+    <div class="accent-shape"></div>
 
-    <!--
-      Botones de navegación principal: proporcionan una ruta clara
-      hacia las otras secciones de la app. Utilizo un botón primario
-      y uno secundario para establecer jerarquía visual.
-    -->
-    <div class="action-buttons">
-      <ion-button 
-        expand="block" 
-        class="custom-btn main-action"
-        (click)="navegar('/informacion-personal')">
-        Ver información personal
-      </ion-button>
+    <div class="hero-content">
+      <div class="typography-poster">
+        <span class="eyebrow">PORTAFOLIO</span>
+        <h1 class="giant-text">
+          FULL<br/>STACK<span class="dot">.</span>
+        </h1>
+        <h2 class="name-text">
+          <span class="highlight">Alcides Mata</span> &mdash; TSU. en Informática
+        </h2>
+      </div>
       
-      <ion-button 
-        expand="block" 
-        fill="clear" 
-        class="custom-btn secondary-action"
-        (click)="navegar('/contacto')">
-        Contactarme
-      </ion-button>
-    </div>
+      <p class="description">
+        ¡Hola! Soy Alcides Mata, un desarrollador Fullstack especializado en la digitalización de procesos manuales, identidad y soluciones de software tanto para empresas como particulares.
+      </p>
 
+      <div class="action-buttons">
+        <ion-button 
+          class="custom-btn main-action"
+          (click)="navegar('/informacion-personal')">
+          Explorar Perfil
+          <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+        
+        <button class="text-link-btn" (click)="navegar('/contacto')">
+          Contactarme
+        </button>
+      </div>
+    </div>
   </div>
 </ion-content>
