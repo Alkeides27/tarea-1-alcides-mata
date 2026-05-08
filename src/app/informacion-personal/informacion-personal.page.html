@@ -1,0 +1,111 @@
+<!--
+  Header de la página de Información Personal.
+  Mantiene la consistencia con la navegación global y ofrece
+  un título claro de la sección en la que el usuario se encuentra.
+-->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Información Personal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding background-neutral">
+  <div class="profile-container">
+
+    <!--
+      Sección de Perfil Header: Muestra la foto, nombre y profesión.
+      La intención es dar una bienvenida personal e identificar
+      rápidamente de quién es el perfil con una jerarquía visual fuerte.
+      
+      IMPORTANTE: Aquí va mi foto de perfil. Por ahora estoy usando un
+      placeholder genérico de Ionic. Cuando esté lista, reemplazo el
+      archivo en src/assets/profile-placeholder.jpg con mi foto real
+      y este componente la mostrará automáticamente.
+    -->
+    <div class="profile-header">
+      <ion-avatar class="main-avatar">
+        <img alt="Foto de perfil" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <h1 class="profile-name">Alcides Mata</h1>
+      <p class="profile-role">Desarrollador Fullstack - TSU. en Informática</p>
+    </div>
+
+    <!--
+      Sección Sobre mí: Contiene una biografía breve. Se utiliza 
+      un contenedor de tarjeta simple, sin sombras fuertes, para
+      mantener el diseño limpio y moderno (no cards anidadas).
+    -->
+    <ion-card class="clean-card">
+      <ion-card-header>
+        <ion-card-title class="section-title">Sobre mí</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="bio-text">
+        Hola! Soy Alcides Mata, un desarrollador Fullstack especializado en la digitalización de procesos manuales, identidad y soluciones de software tanto para empresas como particulares.
+      </ion-card-content>
+    </ion-card>
+
+    <!--
+      Sección Datos Académicos: Lista estructurada para la 
+      educación. Utilizo items limpios para mejorar la escaneabilidad
+      y mantener el foco en la información en sí.
+    -->
+    <ion-card class="clean-card">
+      <ion-card-header>
+        <ion-card-title class="section-title">Datos Académicos</ion-card-title>
+      </ion-card-header>
+      <ion-list lines="none" class="transparent-list">
+        <ion-item class="academic-item">
+          <ion-icon name="school-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h3 class="data-title">Carrera</h3>
+            <p class="data-value">Ingeniería en Informática</p>
+          </ion-label>
+        </ion-item>
+        
+        <ion-item class="academic-item">
+          <ion-icon name="library-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h3 class="data-title">Universidad</h3>
+            <p class="data-value">Universidad Nacional Experimental para las Telecomunicaciones e Informática</p>
+          </ion-label>
+        </ion-item>
+        
+        <ion-item class="academic-item">
+          <ion-icon name="calendar-clear-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h3 class="data-title">Año Académico</h3>
+            <p class="data-value">3er Año</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+    <!--
+      Sección de Intereses: Utilizo ion-chips para dar un estilo
+      de etiquetas, permitiendo listar varias habilidades o intereses
+      de una forma atractiva visualmente y que ahorra espacio.
+    -->
+    <ion-card class="clean-card">
+      <ion-card-header>
+        <ion-card-title class="section-title">Intereses</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="chips-container">
+          <ion-chip color="primary" class="custom-chip">
+            <ion-label>Inteligencia Artificial</ion-label>
+          </ion-chip>
+          <ion-chip color="primary" class="custom-chip">
+            <ion-label>Desarrollo Web</ion-label>
+          </ion-chip>
+          <ion-chip color="primary" class="custom-chip">
+            <ion-label>Ingeniería de Software</ion-label>
+          </ion-chip>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

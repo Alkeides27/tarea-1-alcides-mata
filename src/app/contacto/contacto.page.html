@@ -1,0 +1,122 @@
+<!--
+  Header de la página de Contacto.
+  Conserva el menú lateral para mantener la navegación disponible.
+-->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding background-neutral">
+  <div class="contact-container">
+
+    <!--
+      Introducción amigable: La idea aquí es invitar a conectar
+      en lugar de parecer un formulario frío y corporativo.
+    -->
+    <div class="intro-section">
+      <h1 class="page-heading">Hablemos</h1>
+      <p class="intro-text">
+        Estoy disponible para nuevos proyectos y oportunidades.
+        Puedes escribirme por cualquiera de estos canales o usar
+        el formulario a continuación.
+      </p>
+    </div>
+
+    <!--
+      Canales de contacto: Una lista clara y espaciada para 
+      mostrar la información de contacto directa. Cada ítem usa un
+      ícono para facilitar el reconocimiento visual rápido.
+    -->
+    <ion-list lines="none" class="contact-list">
+      <ion-item class="contact-item">
+        <div class="icon-wrapper" slot="start">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+        <ion-label>
+          <h3>Email</h3>
+          <p>alkeidesantonio@gmail.com</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item class="contact-item">
+        <div class="icon-wrapper" slot="start">
+          <ion-icon name="call-outline"></ion-icon>
+        </div>
+        <ion-label>
+          <h3>Teléfono</h3>
+          <p>0412-1110098</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item class="contact-item">
+        <div class="icon-wrapper" slot="start">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+        <ion-label>
+          <h3>Ubicación</h3>
+          <p>Maturín, Estado Monagas</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item class="contact-item">
+        <div class="icon-wrapper" slot="start">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </div>
+        <ion-label>
+          <h3>LinkedIn</h3>
+          <p>https://linkedin.com/in/alcides-mata</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item class="contact-item">
+        <div class="icon-wrapper" slot="start">
+          <ion-icon name="logo-github"></ion-icon>
+        </div>
+        <ion-label>
+          <h3>GitHub</h3>
+          <p>https://github.com/Alkeides27</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!--
+      Formulario de Contacto UI: Implementado con componentes nativos
+      de Ionic. Aunque no tiene backend funcional, presenta la 
+      interfaz requerida con una estética cuidada.
+    -->
+    <div class="form-section">
+      <h2 class="form-title">Envíame un mensaje</h2>
+      
+      <div class="form-group">
+        <ion-item class="input-item" fill="outline">
+          <ion-label position="floating">Nombre completo</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="form-group">
+        <ion-item class="input-item" fill="outline">
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="form-group">
+        <ion-item class="input-item" fill="outline">
+          <ion-label position="floating">Tu mensaje</ion-label>
+          <ion-textarea rows="4"></ion-textarea>
+        </ion-item>
+      </div>
+
+      <ion-button expand="block" class="submit-btn">
+        Enviar mensaje
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>

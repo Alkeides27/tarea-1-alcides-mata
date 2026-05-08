@@ -1,0 +1,133 @@
+.background-neutral {
+  --background: var(--color-bg);
+}
+
+ion-toolbar {
+  --background: transparent;
+  --border-color: transparent;
+}
+
+ion-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px 0 40px;
+}
+
+.intro-section {
+  margin-bottom: 32px;
+
+  .page-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 var(--space-12) 0;
+    letter-spacing: -0.02em;
+  }
+
+  .intro-text {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    margin: 0;
+  }
+}
+
+.contact-list {
+  background: transparent;
+  margin-bottom: 40px;
+
+  .contact-item {
+    --inner-padding-end: 0;
+    --background: transparent;
+    --padding-start: 0;
+    --min-height: 72px;
+    margin-bottom: 8px;
+
+    .icon-wrapper {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--color-primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: var(--space-16);
+
+      ion-icon {
+        font-size: 24px;
+        color: var(--color-primary-dark);
+      }
+    }
+
+    h3 {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+  }
+}
+
+.form-section {
+  background: var(--color-surface);
+  padding: var(--space-24);
+  border-radius: 16px;
+  border: 1px solid var(--color-muted);
+
+  .form-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--space-24) 0;
+    letter-spacing: -0.01em;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .input-item {
+    --background: var(--color-bg);
+    --border-color: transparent;
+    --border-radius: 8px;
+    --highlight-color-focused: var(--color-primary);
+    --padding-start: var(--space-16);
+    
+    ion-input, ion-textarea {
+      --padding-top: 12px;
+      --padding-bottom: 12px;
+    }
+  }
+
+  .submit-btn {
+    margin-top: var(--space-24);
+    margin-bottom: 0;
+    --background: var(--color-primary);
+    --background-hover: var(--color-primary-dark);
+    --border-radius: 8px;
+    --box-shadow: none;
+    --padding-top: var(--space-16);
+    --padding-bottom: var(--space-16);
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}

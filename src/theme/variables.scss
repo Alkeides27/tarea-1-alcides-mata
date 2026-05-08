@@ -1,2 +1,69 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+// Custom Impeccable Theme: Leader Fullstack - Jade Palette
+// OKLCH variables for unified aesthetics
+
+:root {
+  /* Primary accent – Jade */
+  --color-primary: oklch(0.55 0.12 150);   /* ≈ #4BAF9B */
+  --color-primary-light: oklch(0.9 0.06 150); /* light tint */
+  --color-primary-dark: oklch(0.35 0.12 150); /* dark shade */
+
+  /* Neutrals */
+  --color-bg: oklch(0.98 0.02 150);       /* Very light background */
+  --color-surface: oklch(1 0 150);       /* Pure white with okLCH */
+  --color-text: oklch(0.2 0.02 150);      /* Dark gray for primary text */
+  --color-muted: oklch(0.5 0.02 150);    /* Medium gray for secondary text */
+
+  /* Spacing – 4pt scale */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+
+  /* Typography */
+  --font-display: "Merriweather", serif;
+  --font-body: "Poppins", sans-serif;
+  
+  /* Ionic Base Overrides to match our palette */
+  --ion-font-family: var(--font-body);
+  --ion-background-color: var(--color-bg);
+  --ion-text-color: var(--color-text);
+  --ion-color-primary: #4BAF9B;
+  --ion-item-background: var(--color-surface);
+  --ion-card-background: var(--color-surface);
+}
+
+/* Fallback/Overrides for dark mode logic from Ionic if present */
+html[class*="ion-palette-dark"] {
+  --ion-background-color: var(--color-bg);
+  --ion-text-color: var(--color-text);
+  --ion-item-background: var(--color-surface);
+  --ion-card-background: var(--color-surface);
+}
+
+/* Utility classes */
+.bg-primary { background: var(--color-primary); }
+.text-primary { color: var(--color-primary); }
+.text-muted { color: var(--color-muted); }
+
+.button-primary {
+  --background: var(--color-primary);
+  --background-hover: var(--color-primary-dark);
+  --color: #fff;
+  --border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.button-outline {
+  --background: transparent;
+  --border: 1px solid var(--color-primary);
+  --color: var(--color-primary);
+  --background-hover: var(--color-primary-light);
+  --border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+}

@@ -1,0 +1,46 @@
+<!--
+  Header de la página: minimalista y sin bordes.
+-->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="hero-wrapper">
+    <!-- Decoración asimétrica de fondo -->
+    <div class="accent-shape"></div>
+
+    <div class="hero-content">
+      <div class="typography-poster">
+        <span class="eyebrow">PORTAFOLIO</span>
+        <h1 class="giant-text">
+          FULL<br/>STACK<span class="dot">.</span>
+        </h1>
+        <h2 class="name-text">
+          <span class="highlight">Alcides Mata</span> &mdash; TSU. en Informática
+        </h2>
+      </div>
+      
+      <p class="description">
+        ¡Hola! Soy Alcides Mata, un desarrollador Fullstack especializado en la digitalización de procesos manuales, identidad y soluciones de software tanto para empresas como particulares.
+      </p>
+
+      <div class="action-buttons">
+        <ion-button 
+          class="custom-btn main-action"
+          (click)="navegar('/informacion-personal')">
+          Explorar Perfil
+          <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+        
+        <button class="text-link-btn" (click)="navegar('/contacto')">
+          Contactarme
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>

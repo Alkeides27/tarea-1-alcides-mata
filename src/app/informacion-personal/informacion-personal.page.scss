@@ -1,0 +1,132 @@
+// Variables generales y ajustes de fondo
+.background-neutral {
+  --background: var(--color-bg);
+}
+
+ion-toolbar {
+  --background: transparent;
+  --border-color: transparent;
+}
+
+ion-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+// Contenedor principal con tope para anchos de pantalla grandes
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+// Encabezado del perfil con avatar
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  text-align: center;
+
+  .main-avatar {
+    width: 120px;
+    height: 120px;
+    margin-bottom: var(--space-16);
+    border: 3px solid var(--color-surface);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); // Sombra muy sutil, no glassmorphism
+  }
+
+  .profile-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 4px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .profile-role {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--color-primary); // Acento Jade
+    margin: 0;
+  }
+}
+
+// Tarjetas minimalistas (NO anidadas y SIN estilos por defecto saturados)
+.clean-card {
+  box-shadow: none;
+  background: var(--color-surface);
+  border-radius: 12px;
+  border: 1px solid var(--color-muted);
+  margin: 0 0 var(--space-24) 0;
+  
+  ion-card-header {
+    padding-bottom: var(--space-8);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-transform: none; // Evitar uppercase por legibilidad
+    letter-spacing: -0.01em;
+  }
+}
+
+.bio-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  padding-top: 0;
+}
+
+// Listas sin bordes ni lineas intermedias
+.transparent-list {
+  background: transparent;
+
+  .academic-item {
+    --inner-padding-end: 0;
+    --background: transparent;
+    --padding-start: var(--space-16);
+    --min-height: 60px;
+
+    .data-title {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .data-value {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-text);
+      font-weight: 400;
+    }
+  }
+}
+
+// Chips de intereses
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  padding-top: 4px;
+
+  .custom-chip {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: 500;
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    border-radius: 6px;
+  }
+}
