@@ -28,12 +28,11 @@
     </div>
 
     <!--
-      Canales de contacto: Una lista clara y espaciada para 
-      mostrar la información de contacto directa. Cada ítem usa un
-      ícono para facilitar el reconocimiento visual rápido.
+      Canales de contacto: Ahora interactivos con handlers de click.
+      Cada ítem usa cursor: pointer y ejecuta la acción correspondiente.
     -->
     <ion-list lines="none" class="contact-list">
-      <ion-item class="contact-item">
+      <ion-item class="contact-item clickable" (click)="abrirEmail()" button detail="false">
         <div class="icon-wrapper" slot="start">
           <ion-icon name="mail-outline"></ion-icon>
         </div>
@@ -41,9 +40,10 @@
           <h3>Email</h3>
           <p>alkeidesantonio@gmail.com</p>
         </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" class="arrow-icon"></ion-icon>
       </ion-item>
 
-      <ion-item class="contact-item">
+      <ion-item class="contact-item clickable" (click)="llamarTelefono()" button detail="false">
         <div class="icon-wrapper" slot="start">
           <ion-icon name="call-outline"></ion-icon>
         </div>
@@ -51,9 +51,10 @@
           <h3>Teléfono</h3>
           <p>0412-1110098</p>
         </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" class="arrow-icon"></ion-icon>
       </ion-item>
 
-      <ion-item class="contact-item">
+      <ion-item class="contact-item clickable" (click)="abrirUbicacion()" button detail="false">
         <div class="icon-wrapper" slot="start">
           <ion-icon name="location-outline"></ion-icon>
         </div>
@@ -61,61 +62,138 @@
           <h3>Ubicación</h3>
           <p>Maturín, Estado Monagas</p>
         </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" class="arrow-icon"></ion-icon>
       </ion-item>
 
-      <ion-item class="contact-item">
+      <ion-item class="contact-item clickable" (click)="abrirLinkedIn()" button detail="false">
         <div class="icon-wrapper" slot="start">
           <ion-icon name="logo-linkedin"></ion-icon>
         </div>
         <ion-label>
           <h3>LinkedIn</h3>
-          <p>https://linkedin.com/in/alcides-mata</p>
+          <p>linkedin.com/in/alcides-mata</p>
         </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" class="arrow-icon"></ion-icon>
       </ion-item>
 
-      <ion-item class="contact-item">
+      <ion-item class="contact-item clickable" (click)="abrirGitHub()" button detail="false">
         <div class="icon-wrapper" slot="start">
           <ion-icon name="logo-github"></ion-icon>
         </div>
         <ion-label>
           <h3>GitHub</h3>
-          <p>https://github.com/Alkeides27</p>
+          <p>github.com/Alkeides27</p>
         </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" class="arrow-icon"></ion-icon>
       </ion-item>
     </ion-list>
 
     <!--
-      Formulario de Contacto UI: Implementado con componentes nativos
-      de Ionic. Aunque no tiene backend funcional, presenta la 
-      interfaz requerida con una estética cuidada.
+      Formulario Reactivo: Migrado de Template-driven a Reactive Forms.
+      Cada campo tiene validaciones reales y mensajes de error contextuales.
+      Los errores solo se muestran cuando el campo fue tocado (touched) y es inválido.
     -->
     <div class="form-section">
       <h2 class="form-title">Envíame un mensaje</h2>
-      
-      <div class="form-group">
-        <ion-item class="input-item" fill="outline">
-          <ion-label position="floating">Nombre completo</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-      </div>
 
-      <div class="form-group">
-        <ion-item class="input-item" fill="outline">
-          <ion-label position="floating">Correo electrónico</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-      </div>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-      <div class="form-group">
-        <ion-item class="input-item" fill="outline">
-          <ion-label position="floating">Tu mensaje</ion-label>
-          <ion-textarea rows="4"></ion-textarea>
-        </ion-item>
-      </div>
+        <!-- Campo: Nombre completo -->
+        <div class="form-group">
+          <ion-item class="input-item" fill="outline">
+            <ion-label position="floating">Nombre completo</ion-label>
+            <ion-input type="text" formControlName="nombre"></ion-input>
+          </ion-item>
+          <div class="error-container" *ngIf="contactForm.get('nombre')?.touched && contactForm.get('nombre')?.invalid">
+            <p class="error-message" *ngIf="contactForm.get('nombre')?.errors?.['required']">
+              El nombre es obligatorio.
+            </p>
+            <p class="error-message" *ngIf="contactForm.get('nombre')?.errors?.['minlength']">
+              El nombre debe tener al menos 3 caracteres.
+            </p>
+            <p class="error-message" *ngIf="contactForm.get('nombre')?.errors?.['maxlength']">
+              El nombre no puede superar 60 caracteres.
+            </p>
+          </div>
+        </div>
 
-      <ion-button expand="block" class="submit-btn">
-        Enviar mensaje
-      </ion-button>
+        <!-- Campo: Correo electrónico -->
+        <div class="form-group">
+          <ion-item class="input-item" fill="outline">
+            <ion-label position="floating">Correo electrónico</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <div class="error-container" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+            <p class="error-message" *ngIf="contactForm.get('email')?.errors?.['required']">
+              El correo es obligatorio.
+            </p>
+            <p class="error-message" *ngIf="contactForm.get('email')?.errors?.['pattern']">
+              El correo no tiene un formato válido.
+            </p>
+          </div>
+        </div>
+
+        <!-- Campo: Asunto (NUEVO - Eval 2) -->
+        <div class="form-group">
+          <ion-item class="input-item" fill="outline">
+            <ion-label position="floating">Asunto</ion-label>
+            <ion-input type="text" formControlName="asunto"></ion-input>
+          </ion-item>
+          <div class="error-container" *ngIf="contactForm.get('asunto')?.touched && contactForm.get('asunto')?.invalid">
+            <p class="error-message" *ngIf="contactForm.get('asunto')?.errors?.['required']">
+              El asunto es obligatorio.
+            </p>
+            <p class="error-message" *ngIf="contactForm.get('asunto')?.errors?.['minlength']">
+              El asunto debe tener al menos 5 caracteres.
+            </p>
+            <p class="error-message" *ngIf="contactForm.get('asunto')?.errors?.['maxlength']">
+              El asunto no puede superar 100 caracteres.
+            </p>
+          </div>
+        </div>
+
+        <!-- Campo: Mensaje con contador de caracteres -->
+        <div class="form-group">
+          <ion-item class="input-item" fill="outline">
+            <ion-label position="floating">Tu mensaje</ion-label>
+            <ion-textarea rows="4" formControlName="mensaje"></ion-textarea>
+          </ion-item>
+          <!-- Contador de caracteres: cambia color según proximidad al límite -->
+          <p class="contador" [class]="contadorClass">{{ mensajeLength }}/500</p>
+          <div class="error-container" *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.invalid">
+            <p class="error-message" *ngIf="contactForm.get('mensaje')?.errors?.['required']">
+              El mensaje es obligatorio.
+            </p>
+            <p class="error-message" *ngIf="contactForm.get('mensaje')?.errors?.['minlength']">
+              El mensaje debe tener al menos 20 caracteres.
+            </p>
+            <p class="error-message" *ngIf="contactForm.get('mensaje')?.errors?.['maxlength']">
+              El mensaje no puede superar 500 caracteres.
+            </p>
+          </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="form-actions">
+          <ion-button
+            expand="block"
+            fill="outline"
+            class="clear-btn"
+            type="button"
+            (click)="onLimpiar()">
+            Limpiar
+          </ion-button>
+
+          <ion-button
+            expand="block"
+            class="submit-btn"
+            type="submit"
+            [disabled]="contactForm.invalid">
+            Enviar mensaje
+          </ion-button>
+        </div>
+
+      </form>
     </div>
 
   </div>
