@@ -15,6 +15,10 @@
     <div class="accent-shape"></div>
 
     <div class="hero-content">
+
+      <!-- Saludo dinámico según la hora del día -->
+      <p class="saludo-dinamico">{{ saludo }}</p>
+
       <div class="typography-poster">
         <span class="eyebrow">PORTAFOLIO</span>
         <h1 class="giant-text">
@@ -24,23 +28,30 @@
           <span class="highlight">Alcides Mata</span> &mdash; TSU. en Informática
         </h2>
       </div>
-      
+
       <p class="description">
         ¡Hola! Soy Alcides Mata, un desarrollador Fullstack especializado en la digitalización de procesos manuales, identidad y soluciones de software tanto para empresas como particulares.
       </p>
 
       <div class="action-buttons">
-        <ion-button 
+        <ion-button
           class="custom-btn main-action"
-          (click)="navegar('/informacion-personal')">
+          (click)="irAPerfil()">
           Explorar Perfil
           <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
         </ion-button>
-        
-        <button class="text-link-btn" (click)="navegar('/contacto')">
+
+        <button class="text-link-btn" (click)="irAContacto()">
           Contactarme
         </button>
       </div>
+
+      <!-- Contador de visitas con localStorage -->
+      <p class="visit-counter">
+        <ng-container *ngIf="visitas === 1">Es tu primera visita 👋</ng-container>
+        <ng-container *ngIf="visitas > 1">Has visitado esta app {{ visitas }} veces</ng-container>
+      </p>
+
     </div>
   </div>
 </ion-content>
