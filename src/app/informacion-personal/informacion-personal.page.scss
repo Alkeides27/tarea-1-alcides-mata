@@ -128,5 +128,50 @@ ion-title {
     background: var(--color-primary-light);
     color: var(--color-primary-dark);
     border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: var(--color-primary);
+      color: #ffffff;
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+}
+
+// Sugerencia visual para las chips
+.chips-hint {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin: 0 0 8px 0;
+  font-style: italic;
+}
+
+// Tarjetas expandibles — patrón con chevron
+.expandable-card {
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--space-8);
+  }
+
+  .expand-icon {
+    color: var(--color-muted);
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }

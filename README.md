@@ -67,3 +67,22 @@ Las capturas de pantalla del proceso de desarrollo paso a paso están en la carp
 ## Repositorio
 
 https://github.com/Alkeides27/tarea-1-alcides-mata
+
+## Interactividad agregada (Evaluación 2)
+
+### Contacto
+- Formulario migrado a Reactive Forms con validaciones por campo (nombre, email, asunto, mensaje).
+- Mensajes de error contextuales que aparecen tras tocar el campo.
+- Contador de caracteres en el mensaje con cambio de color al acercarse al límite.
+- Submit que abre el cliente de correo con los datos prellenados vía mailto.
+- Botón Limpiar con confirmación previa.
+- Canales (Email, Teléfono, Ubicación, LinkedIn, GitHub) ahora funcionales.
+
+### Inicio
+- Saludo dinámico según la hora del día.
+- Navegación rápida a Perfil y Contacto.
+- Contador local de visitas con localStorage.
+
+### Información Personal
+- Items del stack/intereses interactivos que muestran descripción al tap.
+- Secciones expandibles con detalle extendido.

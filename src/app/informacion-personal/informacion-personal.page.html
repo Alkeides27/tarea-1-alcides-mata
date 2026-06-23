@@ -19,7 +19,7 @@
       Sección de Perfil Header: Muestra la foto, nombre y profesión.
       La intención es dar una bienvenida personal e identificar
       rápidamente de quién es el perfil con una jerarquía visual fuerte.
-      
+
       IMPORTANTE: Aquí va mi foto de perfil. Por ahora estoy usando un
       placeholder genérico de Ionic. Cuando esté lista, reemplazo el
       archivo en src/assets/profile-placeholder.jpg con mi foto real
@@ -34,29 +34,35 @@
     </div>
 
     <!--
-      Sección Sobre mí: Contiene una biografía breve. Se utiliza 
-      un contenedor de tarjeta simple, sin sombras fuertes, para
-      mantener el diseño limpio y moderno (no cards anidadas).
+      Tarjeta 0 — Sobre mí: Expandible con toggle.
+      Se aplica el patrón Set<number> para manejar estado de expansión.
     -->
-    <ion-card class="clean-card">
-      <ion-card-header>
+    <ion-card class="clean-card expandable-card" (click)="toggleCard(0)">
+      <ion-card-header class="card-header-row">
         <ion-card-title class="section-title">Sobre mí</ion-card-title>
+        <ion-icon
+          [name]="isExpanded(0) ? 'chevron-up-outline' : 'chevron-down-outline'"
+          class="expand-icon">
+        </ion-icon>
       </ion-card-header>
-      <ion-card-content class="bio-text">
+      <ion-card-content class="bio-text" *ngIf="isExpanded(0)">
         Hola! Soy Alcides Mata, un desarrollador Fullstack especializado en la digitalización de procesos manuales, identidad y soluciones de software tanto para empresas como particulares.
       </ion-card-content>
     </ion-card>
 
     <!--
-      Sección Datos Académicos: Lista estructurada para la 
-      educación. Utilizo items limpios para mejorar la escaneabilidad
-      y mantener el foco en la información en sí.
+      Tarjeta 1 — Datos Académicos: Expandible con toggle.
+      Lista estructurada para la educación con items limpios.
     -->
-    <ion-card class="clean-card">
-      <ion-card-header>
+    <ion-card class="clean-card expandable-card" (click)="toggleCard(1)">
+      <ion-card-header class="card-header-row">
         <ion-card-title class="section-title">Datos Académicos</ion-card-title>
+        <ion-icon
+          [name]="isExpanded(1) ? 'chevron-up-outline' : 'chevron-down-outline'"
+          class="expand-icon">
+        </ion-icon>
       </ion-card-header>
-      <ion-list lines="none" class="transparent-list">
+      <ion-list lines="none" class="transparent-list" *ngIf="isExpanded(1)" (click)="$event.stopPropagation()">
         <ion-item class="academic-item">
           <ion-icon name="school-outline" slot="start" color="primary"></ion-icon>
           <ion-label>
@@ -64,7 +70,7 @@
             <p class="data-value">Ingeniería en Informática</p>
           </ion-label>
         </ion-item>
-        
+
         <ion-item class="academic-item">
           <ion-icon name="library-outline" slot="start" color="primary"></ion-icon>
           <ion-label>
@@ -72,7 +78,7 @@
             <p class="data-value">Universidad Nacional Experimental para las Telecomunicaciones e Informática</p>
           </ion-label>
         </ion-item>
-        
+
         <ion-item class="academic-item">
           <ion-icon name="calendar-clear-outline" slot="start" color="primary"></ion-icon>
           <ion-label>
@@ -84,23 +90,27 @@
     </ion-card>
 
     <!--
-      Sección de Intereses: Utilizo ion-chips para dar un estilo
-      de etiquetas, permitiendo listar varias habilidades o intereses
-      de una forma atractiva visualmente y que ahorra espacio.
+      Tarjeta 2 — Intereses: Chips interactivas que muestran descripción al tap.
+      Usa mostrarDescripcion('NombreItem') para desplegar un IonToast con la descripción.
     -->
-    <ion-card class="clean-card">
-      <ion-card-header>
+    <ion-card class="clean-card expandable-card" (click)="toggleCard(2)">
+      <ion-card-header class="card-header-row">
         <ion-card-title class="section-title">Intereses</ion-card-title>
+        <ion-icon
+          [name]="isExpanded(2) ? 'chevron-up-outline' : 'chevron-down-outline'"
+          class="expand-icon">
+        </ion-icon>
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content *ngIf="isExpanded(2)" (click)="$event.stopPropagation()">
+        <p class="chips-hint">Toca un interés para saber más</p>
         <div class="chips-container">
-          <ion-chip color="primary" class="custom-chip">
+          <ion-chip color="primary" class="custom-chip" (click)="mostrarDescripcion('Inteligencia Artificial')">
             <ion-label>Inteligencia Artificial</ion-label>
           </ion-chip>
-          <ion-chip color="primary" class="custom-chip">
+          <ion-chip color="primary" class="custom-chip" (click)="mostrarDescripcion('Desarrollo Web')">
             <ion-label>Desarrollo Web</ion-label>
           </ion-chip>
-          <ion-chip color="primary" class="custom-chip">
+          <ion-chip color="primary" class="custom-chip" (click)="mostrarDescripcion('Ingeniería de Software')">
             <ion-label>Ingeniería de Software</ion-label>
           </ion-chip>
         </div>
